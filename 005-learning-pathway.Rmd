@@ -1,0 +1,32 @@
+---
+output: 
+    html_document:
+        css: solarized-light.css
+---
+[Home](https://peterwsetter.github.io)
+
+## Data Science with R Learning Pathway
+
+Last updated `r Sys.Date()`
+
+Inspired by the [Open Source Data Science Master's](https://github.com/peterwsetter/peterwsetter.github.io) and [Hadley Wickham's advice on becoming a data scientist](https://gist.github.com/hadley/820f09ded347c62c2864), this resource provides a pathway for learning Data Science with R. The foundation is the [Johns Hopkins Data Science Specialization](https://www.coursera.org/specializations/jhu-data-science), supplemented with [what someone should do next](https://peterwsetter.github.io/003-after-dss.html).
+
+### Statistical Knowledge
+
+- Brian Caffo's [Biostatitics Bootcamp](https://www.youtube.com/playlist?list=PLpl-gQkQivXhk6qSyiNj51qamjAtZISJ-): More mathematical foundation to the topics in Statistical Inference
+- [Statistics in Medicine](https://lagunita.stanford.edu/courses/Medicine/MedStats./Summer2015/about): More intuitive understanding of statistics plus introduction to non-parametric.
+- [Designing, Running, and Analyzing Experiments](https://www.coursera.org/learn/designexperiments): Practical approach covering parametric and non-parametric tests, along with the tests for the ANOVA assumptions.
+
+### Programming Skills
+
+#### Learning More R from Hadley
+
+- [Advanced R](http://adv-r.had.co.nz/): Quickly covers basics of R development before moving onto more advanced topics.
+- [R Packages](http://r-pkgs.had.co.nz/): The next step after abstracting your code with functions.
+
+#### SQL
+Most organizations store their data in a SQL database, and most non-RMDBS systems use a version of SQL for their queries.
+
+- [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql)
+- [Mode's SQL School](https://sqlschool.modeanalytics.com/)
+- [Stanford's online course](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)

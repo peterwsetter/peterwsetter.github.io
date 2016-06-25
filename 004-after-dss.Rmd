@@ -1,0 +1,33 @@
+---
+output: 
+    html_document:
+        css: solarized-light.css
+---
+
+### I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?
+
+This was the first topic on episode eight of Non-Standard Deviations. Roger Peng,  co-founder of  the Coursera series, turned to co-host Hilary Parker for her thoughts since she works outside academia. Parker offered some good advice, but her path to data science -- a PhD in Biostatistics from Johns Hopkins -- was quite different than that of the people who enroll in the Data Science Specialization.
+
+My stereotype of DS Specializers is that they come from a background other than computer science or statistics. They're interested in data analysis and want to make a career change. I base this stereotype partially on myself: I have a technical background, but prior to making the shift to data science, I was a K-12 teacher. Here's my advice for my fellow DS Specializers on what to do next.
+
+### 1. Do analysis and post it online.
+
+This is the most common piece of advice, and Parker talked about it on NSD, but it's worth repeating. When interviewing for positions, hiring managers want to know what you can do and, as the cliche goes, it's better to show than tell. As you go through the Specialization, for each course project, do a similar one on a different dataset or a problem you're interested in. Upload your code to Github and post your findings on a blog, Github page, or something similar. 
+
+### 2. Learn SQL, deepen your understanding of R, and worry about other languages later.
+
+With all the hype around Big Data, it's easy to forget that most organizations store their data in a SQL database. Before you can do your analysis in R, you'll need get it there. Further, some organizations are unfamiliar with R, but everyone knows of SQL. I used [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql), [Mode's SQL School](https://sqlschool.modeanalytics.com/), and [Stanford's online course](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about) to learn the basics. I personally grew to appreciate the elegance of relational algebra. (One thing that I missed the first time around was the WITH clause. Learn it and love it.)
+
+It's tempting to spend time learning Python or a Big Data tool but leave those for later. Continue to master R and learn other tools when the need arises. The better you understand R, the more approaches you'll have to solving problems. Learning Python -- for data analysis -- is fairly straightforward if you know R. If you're very concerned about tackling medium-large data problems, focus on data.table. While the DSS leads you to the Hadleyverse, data.table was designed to approach medium-large data in a way dplyr wasn't.
+
+Where to learn more R? Hadley has two great books [Advanced R](http://adv-r.had.co.nz/) and [R Packages](http://r-pkgs.had.co.nz/). The former includes a fair amount of review but will deepen your understanding of R. The latter provides a good introduction to a powerful tool; packages allow not only the sharing of functions but also data. DSS provides a good introduction to ggplot2, but make sure you feel comfortable building graphs; high-quality visuals will always be in demand.
+
+While there is a lot of redundancy, #rstats on Twitter offers many great links and the opportunity to interact with the R community. Similarly, [Stack Overflow](stackoverflow.com/questions/tagged/r) is a great resource to read through regularly. I often find problems I didn't know I had, and it's an opportunity to compare how you would approach a problem with those of others.
+
+### 3. Look to apply what you learn do your current position or field.
+
+When I first applied to data science positions, most of my interviews were with organizations in my field. When considering candidates, hiring managers ask: does this person have the skills to complete the job, and does this person understand and care about the problems they'll be working on? While organizations require a certain foundational skills, they'll often be willing to train someone who is invested in the problem. These people are more likely to stay with the organization and work harder, which, generally, comes off better in terms of both opportunity and real costs.
+
+### 4. Be realistic about that first job.
+
+A crucial point made by Peng in NSD was that if all the positions you really want require a PhD, your next step should be to get a PhD. When I lurked r/machinelearning, many of the posts were questions by people wanting to know how they could land a job where they'd get to apply their favorite algorithm. Realize that your first job will probably be working on "simpler" problems; however, "simpler" doesn't mean  unimportant. When I took my first position, I realized there was a big need for reproducible reports. Too many of the reports, at all levels, required too much time and effort to generate. Using R and R Markdown I was able to create reports that contained much more information and could be re-run on a moments notice.  There are often many opportunities for this type of work: using R to make things run quicker and look better. Focus on those in order to sharpen skills and gain trust within your organization. From there other opportunities will open up.
