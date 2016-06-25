@@ -1,0 +1,124 @@
+---
+output: 
+    html_document:
+        css: solarized-light.css
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+## Individualized Reproducible Reports 
+Good-bye mail merge!
+
+### The Problem and Possible Solutions
+
+**Problem** Need to combine information from multiple data sources to create individualized reports for hundreds, or even thousands, of recipients. Further, these reports need to be created weekly.
+
+*In my version of the problem, my schools wanted weekly progress reports that included academic and behavior data. Some schools also wanted information on attendance, independent reading, and/or community service.*
+
+**Mail Merge Solution** Download or collect the data in a spreadsheet, and use Microsoft Word's Mail Merge functionality. The template is very easy to customize, but the data must be in wide format and data manipulation is often done by hand.
+
+**Visual Basic Solution** Download or collect data in one spreadsheets. Write a VBA macro that tidies and transforms the data. This automates the process but is oftentimes very slow. 
+
+*My predecessor used this solution. It took ~20 minutes to create 400 progress reports that only included academic data.*
+
+**R and R Markdown Solution** Write a R Markdown document that utilizes the power of R to get and clean data and the formatting options of Latex and HTML.
+
+*Depending on the report, I retrieve data from a database* (`RODBC`)*, a GoogleSheet* (`googlesheets`) *, and even an Excel file in a shared folder* (`xlsx` or `openxlsx`) *. I replaced the VBA-generated progress report from above with a R Markdown-generated report that also included behavior information and a graph of words read, and the time to generate this report was still under a minute. Further, the entire process was automated. Rather than needing to write the results of a query to a file, then copy this data into the Excel file with the macro, I just opened the R Markdown file and clicked Knit PDF.*
+
+### The YAML Header
+
+The YAML header includes several of the key elements of your report template. My basic header is:
+
+```
+header-includes: 
+    \pagestyle{empty} 
+    \usepackage{wallpaper} 
+    \LRCornerWallPaper{1}{path/to/image} 
+    \URCornerWallPaper{1}{path/to/image} 
+    \usepackage{geometry} 
+    \geometry{tmargin=1.5in}
+output: pdf_document
+```
+
+By default, R Markdown documents number their pages. `\pagestyle{empty}` removes page numbers from all but the first page, which I typically use as a title page with summary information. 
+
+The `wallpaper` Latex package allows you to add header and footer images in the upper-right (UR), lower-right (LR), upper-left (LR), and lower-left (LL). The number inside of the `{}` is the scaling of the image. On Windows, I experienced the problem of the image being placed directly in the corner of the page with no margin. A work-around is adding white-space to the image.
+
+Depending on the size of your header image, you may need to adjust the margins before the content of the document starts. The `geometry` Latex package allows you to make these adjustments. [ShareLatex](https://www.sharelatex.com/learn/Page_size_and_margins#Paper_size.2C_orientation_and_margins) provides a good overview of the available options.  
+
+I always output to PDF. In general, the formatting turns out cleaner compared to generating Word documents. The Latex used in this document will not render if the output is HTML. 
+
+### Key R Code Elements
+
+Within your R code the first step is to pull or create a list of individuals who will receive the reports. I approach this problem by pulling a list of distinct ID numbers along with their name and other basic information like adviser and grade. For clarity, I isolate the getting and cleaning of data in the first code block and put the document-creating code in the second block.
+
+For the document-creating code, block options should include at least
+
+`{r, echo = FALSE, results = 'asis'}`
+
+The `asis` option allows output to be formatted as normal text rather than R output. 
+
+The first line of code provides a way to iterate through your list.
+
+`for (i in seq_along(recipients)) {`
+
+Inside your `for` loop, include code for displaying the information in the report. For lines of text, use `cat`. `print` should only be used with tables.
+
+```{r, results = 'asis'}
+library(knitr)
+
+name <- 'R Markdown' 
+
+df <- head(mtcars[1:5])
+
+cat(name, 'is the best!\n\n')
+
+cat(kable(df))
+
+# Using the following will throw an error
+# print(name, 'is the best!\n\n')
+
+print(kable(df))
+
+```
+
+Notice that for printed lines, is it necessary to include `\n\n` to ensure line-breaks, just like when writing in typical Markdown.
+
+Not all tables require `print`, such as `pandoc.table` from the `pander` package or `xtable`. `pandoc.table` is particularly useful if you have long text columns, because you can set the cell width.
+
+At the bottom of your code block but inside your `for` loop, include the page break. `cat('\n\n\\pagebreak\n')`
+
+This is the first example of needing to include `\\`. Like with regular expressions, without the extra `\`, R will think `\p` as an escape character.
+
+### Other Useful Code Elements
+
+Three other building blocks I use often are the section header 
+
+`cat('\\section*{Name of section}\n\n')`
+
+centered text 
+
+`cat('\\centerline{Centered Text}\n\n')`
+
+and a horizontal line 
+
+`cat('\n\n------\n\n')`.
+
+If you have multiple graphs and would like to display them side-by-side, rather than the default one graph per line, I suggest `grid.arrange` from `gridExtra`. It is also possible to group more than two graphs. This allows you to set the `fig.height` and `fig.width` for the entire grouping, helpful if you need to fit all the graphs on a single page.
+
+```{r, warning = FALSE, fig.height = 4, fig.width = 4}
+library(ggplot2)
+library(gridExtra)
+
+a <- rnorm(100, 50)
+b <- rpois(100, 1)
+x <- rbinom(100, 1, 0.5)
+y <- runif(100, 0, 100)
+
+p1 <- qplot(a, b)
+p2 <- qplot(x, y)
+p3 <- qplot(x, a)
+p4 <- qplot(b, y)
+
+grid.arrange(p1, p2, p3, p4)
+```

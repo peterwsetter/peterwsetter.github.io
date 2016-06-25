@@ -13,8 +13,8 @@ output:
 ### Posts
 
 #### Reproducible Reports
-[Individualized Reproducible Reports](https://peterwsetter.github.io/posts/001-individualized-reports.html) Good-bye mail merge!
+[Individualized Reproducible Reports](https://peterwsetter.github.io/001-individualized-reports.html) Good-bye mail merge!
 
-[Side-by-Side Tables in Rmarkdown PDFs](https://peterwsetter.github.io/posts/002-side-by-side.html)
+[Side-by-Side Tables in Rmarkdown PDFs](https://peterwsetter.github.io/002-side-by-side.html)
 
-[Font Size in Rmarkdown Tables](https://peterwsetter.github.io/posts/003-font-size.html)
+[Font Size in Rmarkdown Tables](https://peterwsetter.github.io/003-font-size.html)
