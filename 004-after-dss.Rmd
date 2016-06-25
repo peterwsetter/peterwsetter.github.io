@@ -7,7 +7,7 @@ output:
 
 ### I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?
 
-This was the first topic on episode eight of Non-Standard Deviations. Roger Peng,  co-founder of  the Coursera series, turned to co-host Hilary Parker for her thoughts since she works outside academia. Parker offered some good advice, but her path to data science -- a PhD in Biostatistics from Johns Hopkins -- was quite different than that of the people who enroll in the Data Science Specialization.
+On episode eight of Non-Standard Deviations. Roger Peng,  co-founder of the Coursera series, turned to co-host Hilary Parker for her thoughts since she works outside academia. Parker offered some good advice, but her path to data science -- a PhD in Biostatistics from Johns Hopkins -- was quite different than that of the people who enroll in the Data Science Specialization.
 
 My stereotype of DS Specializers is that they come from a background other than computer science or statistics. They're interested in data analysis and want to make a career change. I base this stereotype partially on myself: I have a technical background, but prior to making the shift to data science, I was a K-12 teacher. Here's my advice for my fellow DS Specializers on what to do next.
 
@@ -17,7 +17,7 @@ This is the most common piece of advice, and Parker talked about it on NSD, but 
 
 ### 2. Learn SQL, deepen your understanding of R, and worry about other languages later.
 
-With all the hype around Big Data, it's easy to forget that most organizations store their data in a SQL database. Before you can do your analysis in R, you'll need get it there. Further, some organizations are unfamiliar with R, but everyone knows of SQL. I used [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql), [Mode's SQL School](https://sqlschool.modeanalytics.com/), and [Stanford's online course](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about) to learn the basics. I personally grew to appreciate the elegance of relational algebra. (One thing that I missed the first time around was the WITH clause. Learn it and love it.)
+With all the hype around Big Data, it's easy to forget that most organizations store their data in a SQL database. Before you can do your analysis in R, you'll need get it there. Further, some organizations are unfamiliar with R, but everyone knows of SQL. I used [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql), [Mode's SQL School](https://sqlschool.modeanalytics.com/), and [Stanford's online course](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about) to learn the basics. I personally grew to appreciate the elegance of relational algebra. (One thing that I missed the first time around was common table expressions, the WITH clause. Learn it and love it.)
 
 It's tempting to spend time learning Python or a Big Data tool but leave those for later. Continue to master R and learn other tools when the need arises. The better you understand R, the more approaches you'll have to solving problems. Learning Python -- for data analysis -- is fairly straightforward if you know R. If you're very concerned about tackling medium-large data problems, focus on data.table. While the DSS leads you to the Hadleyverse, data.table was designed to approach medium-large data in a way dplyr wasn't.
 

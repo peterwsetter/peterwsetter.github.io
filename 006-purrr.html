@@ -117,12 +117,12 @@ $(document).ready(function () {
 <h2>A purrr Resource</h2>
 <div id="motivation" class="section level4">
 <h4>Motivation</h4>
-<p>I was very interested in purrr when it was <a href="https://blog.rstudio.org/2015/09/29/purrr-0-1-0/">first released</a>, but I quickly ran into a wall when I tried using it in my own. This post will be updated with tips and tricks that I found helpful when learning to use it.</p>
+<p>I was very interested in purrr when it was <a href="https://blog.rstudio.org/2015/09/29/purrr-0-1-0/">first released</a>, but I quickly ran into a wall when I tried using it on my own. This post will be periodically updated with tips and tricks that I found helpful when learning to use it.</p>
 <p>Before getting started, view this <a href="https://t.co/PQjHCf4eO2">talk from Hadley</a> where he explains – by cupcake-baking analogy – the usefulness of functional programming. Hadley is designing purrr as a successor to the <code>.*apply</code> family (and his own plyr package), but this <a href="http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega">Stack Overflow thread</a> is a great resource for using these base-R functions.</p>
 </div>
 <div id="applying-functions-by-group" class="section level4">
 <h4>Applying Functions by Group</h4>
-<p>A common task in my workflow is applying a function on two or more variables over a grouping variable. For example, using the <a href="https://catalog.data.gov/dataset/college-scorecard">College Scorecard</a> dataset, what is the correlation between admission rate and middle ACT composite depending on school control (Public, Private Non-Profit, Private For-Profit)</p>
+<p>A common task in my workflow is applying a function on two or more variables over a grouping variable. For example, using the <a href="https://catalog.data.gov/dataset/college-scorecard">College Scorecard</a> dataset, what is the correlation between admission rate and middle ACT composite depending on school control (Public, Private Non-Profit, Private For-Profit)?</p>
 <pre class="r"><code>library(dplyr)
 library(purrr)
 library(data.table)
@@ -148,8 +148,8 @@ college.scorecard %&gt;%
 ## 
 ## data:  .
 ## W = 0.98533, p-value = 2.088e-10</code></pre>
-<pre class="r"><code># p &lt;&lt; 0.05, therefore, we'll use Spearman
-
+<pre class="r"><code># p &lt;&lt; 0.05, indicating non-normality, therefore, we'll use Spearman correlation
+# `1` = Public, `2` = Private Non-Profit, `3` = Private For-Profit
 college.scorecard %&gt;%
     split(.$CONTROL) %&gt;%
     map(function(df) with(df, cor(ADM_RATE, ACTCMMID, 

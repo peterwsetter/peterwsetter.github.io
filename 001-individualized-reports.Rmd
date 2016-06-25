@@ -17,9 +17,9 @@ Good-bye mail merge!
 
 *In my version of the problem, my schools wanted weekly progress reports that included academic and behavior data. Some schools also wanted information on attendance, independent reading, and/or community service.*
 
-**Mail Merge Solution** Download or collect the data in a spreadsheet, and use Microsoft Word's Mail Merge functionality. The template is very easy to customize, but the data must be in wide format and data manipulation is often done by hand.
+**Mail Merge Solution** Download or collect the data in a spreadsheet and use Microsoft Word's mail merge functionality. The template is very easy to customize, but the data must be in wide format and data manipulation is often done by hand.
 
-**Visual Basic Solution** Download or collect data in one spreadsheets. Write a VBA macro that tidies and transforms the data. This automates the process but is oftentimes very slow. 
+**Visual Basic Solution** Download or collect data in one spreadsheet. Write a VBA macro that tidies and transforms the data. This automates the process but is oftentimes very slow. 
 
 *My predecessor used this solution. It took ~20 minutes to create 400 progress reports that only included academic data.*
 
@@ -52,7 +52,7 @@ I always output to PDF. In general, the formatting turns out cleaner compared to
 
 ### Key R Code Elements
 
-Within your R code the first step is to pull or create a list of individuals who will receive the reports. I approach this problem by pulling a list of distinct ID numbers along with their name and other basic information like adviser and grade. For clarity, I isolate the getting and cleaning of data in the first code block and put the document-creating code in the second block.
+Within your R code, the first step is to pull or create a list of individuals who will receive the reports. I approach this problem by pulling a list of distinct ID numbers along with their name and other basic information like adviser and grade. For clarity, I isolate the getting and cleaning of data in the first code block and put the document-creating code in the second block.
 
 For the document-creating code, block options should include at least
 

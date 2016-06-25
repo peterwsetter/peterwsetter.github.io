@@ -66,4 +66,4 @@ grades %>%
     pandoc.table
 ```
 
-Using `Latex` and HTML tags is an easy way to add custom formatting to `pandoc.table`s. I'm curious about using `split.single.cells` and `split.large.cells` ([functions within `pandoc.table`](https://github.com/Rapporter/pander/blob/master/R/pandoc.R)) with `knitr::kable` in order to create `Latex` output with wrapped text. I'd also like to implement `cell.height` functionality so rows have a uniform height. Overall, it may be worth creating an `ApplyFormatting` function (in base-`R`) for more flexibility.
+Using `Latex` and HTML tags is an easy way to add custom formatting to `pandoc.table`s. I'm curious about using `split.single.cells` and `split.large.cells` ([functions within `pandoc.table`](https://github.com/Rapporter/pander/blob/master/R/pandoc.R)) with `knitr::kable` in order to create `Latex` output with wrapped text. I'd also like to implement `cell.height` functionality so rows have a uniform height. Overall, it may be worth creating an `ApplyFormatting` function (in base-R) for more flexibility.

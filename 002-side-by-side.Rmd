@@ -53,7 +53,7 @@ my.table <- mtcars[1:5, 1:5]
 grid.arrange(CustomTable(my.table), CustomTable(my.table), nrow = 1)
 ```
 
-The difficulty I ran into using this method was when I tried to place the tables on the page, especially in relation to other elements, like a `pandoc.table`. I wasn't satisfied with the results, so I decided to pursue other options.
+The problem I ran into using this method was when I tried to place the tables on the page, especially in relation to other elements, like a `pandoc.table`. I wasn't satisfied with the results, so I decided to pursue other options.
 
 I found the second method at [StackOverflow](http://stackoverflow.com/questions/23926671/side-by-side-xtables-in-rmarkdown) which involves writing the tables to file then placing them in the document. While effective, it's not ideal when you're creating five hundred individualized reports.
 
