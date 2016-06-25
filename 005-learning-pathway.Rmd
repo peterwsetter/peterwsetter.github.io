@@ -14,7 +14,7 @@ Inspired by the [Open Source Data Science Master's](https://github.com/peterwset
 ### Statistical Knowledge
 
 - Brian Caffo's [Biostatitics Bootcamp](https://www.youtube.com/playlist?list=PLpl-gQkQivXhk6qSyiNj51qamjAtZISJ-): More mathematical foundation to the topics in Statistical Inference
-- [Statistics in Medicine](https://lagunita.stanford.edu/courses/Medicine/MedStats./Summer2015/about): More intuitive understanding of statistics plus introduction to non-parametric.
+- [Statistics in Medicine](https://lagunita.stanford.edu/courses/Medicine/MedStats./Summer2015/about): More intuitive understanding of statistics plus introduction to non-parametric tests.
 - [Designing, Running, and Analyzing Experiments](https://www.coursera.org/learn/designexperiments): Practical approach covering parametric and non-parametric tests, along with the tests for the ANOVA assumptions.
 
 ### Programming Skills
@@ -30,7 +30,8 @@ Most organizations store their data in a SQL database, and most non-RMDBS system
 - [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql)
 - [Mode's SQL School](https://sqlschool.modeanalytics.com/)
 - [Stanford's online course](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
+- [dplyr Databases vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html)
 
 #### Functional Programming
 
-- [The .*apply Family](http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega)
+- [The `.*apply` Family](http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega): Good overview of map-y functions in base-R.

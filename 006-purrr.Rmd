@@ -9,13 +9,13 @@ output:
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```
 
-## A `purrr` Resource
+## A purrr Resource
 
 #### Motivation
 
-I was very interested in `purrr` when it was [first released](https://blog.rstudio.org/2015/09/29/purrr-0-1-0/), but I quickly ran into a wall when I tried using it in my own. This post will be updated with tips and tricks that I found helpful when learning to use it.
+I was very interested in purrr when it was [first released](https://blog.rstudio.org/2015/09/29/purrr-0-1-0/), but I quickly ran into a wall when I tried using it in my own. This post will be updated with tips and tricks that I found helpful when learning to use it.
 
-Before getting started, view this [talk from Hadley](https://t.co/PQjHCf4eO2) where he explains -- by cupcake-baking analogy -- the usefulness of functional programming. Hadley is designing `purrr` as a successor to the .*apply family (and his own `plyr` package), but this [Stack Overflow thread](http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega) is a great resource for using these base-`R` functions.
+Before getting started, view this [talk from Hadley](https://t.co/PQjHCf4eO2) where he explains -- by cupcake-baking analogy -- the usefulness of functional programming. Hadley is designing purrr as a successor to the `.*apply` family (and his own plyr package), but this [Stack Overflow thread](http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega) is a great resource for using these base-R functions.
 
 #### Applying Functions by Group
 

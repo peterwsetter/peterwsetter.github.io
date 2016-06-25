@@ -26,4 +26,4 @@ output:
 
 #### Programming
 
-[A `purrr` Resource](https://peterwsetter.github.io/006-purrr.html)
+[A purrr Resource](https://peterwsetter.github.io/006-purrr.html)

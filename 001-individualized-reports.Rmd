@@ -62,7 +62,9 @@ The `asis` option allows output to be formatted as normal text rather than R out
 
 The first line of code provides a way to iterate through your list.
 
-`for (i in seq_along(recipients)) {`
+`for (i in seq_len(nrow(recipients)))`
+
+The `seq_len(nrow(...))` defensively programs against an empty list. 
 
 Inside your `for` loop, include code for displaying the information in the report. For lines of text, use `cat`. `print` should only be used with tables.
 
