@@ -1,0 +1,20 @@
+---
+output: 
+    html_document:
+        css: solarized-light.css
+---
+
+## Peter W Setter
+
+[Twitter](http://www.twitter.com/peterwsetter)
+
+[Github](http://www.github.com/peterwsetter)
+
+### Posts
+
+#### Reproducible Reports
+[Individualized Reproducible Reports](https://peterwsetter.github.io/posts/001-individualized-reports.html) Good-bye mail merge!
+
+[Side-by-Side Tables in Rmarkdown PDFs](https://peterwsetter.github.io/posts/002-side-by-side.html)
+
+[Font Size in Rmarkdown Tables](https://peterwsetter.github.io/posts/003-font-size.html)
