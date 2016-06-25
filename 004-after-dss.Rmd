@@ -3,6 +3,7 @@ output:
     html_document:
         css: solarized-light.css
 ---
+[Home](https://peterwsetter.github.io)
 
 ### I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?
 

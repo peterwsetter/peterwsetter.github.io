@@ -1,0 +1,56 @@
+---
+output: 
+    html_document:
+      css: solarized-light.css
+---
+[Home](https://peterwsetter.github.io)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+## A `purrr` Resource
+
+#### Motivation
+
+I was very interested in `purrr` when it was [first released](https://blog.rstudio.org/2015/09/29/purrr-0-1-0/), but I quickly ran into a wall when I tried using it in my own. This post will be updated with tips and tricks that I found helpful when learning to use it.
+
+Before getting started, view this [talk from Hadley](https://t.co/PQjHCf4eO2) where he explains -- by cupcake-baking analogy -- the usefulness of functional programming. Hadley is designing `purrr` as a successor to the .*apply family (and his own `plyr` package), but this [Stack Overflow thread](http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega) is a great resource for using these base-`R` functions.
+
+#### Applying Functions by Group
+
+A common task in my workflow is applying a function on two or more variables over a grouping variable. For example, using the [College Scorecard](https://catalog.data.gov/dataset/college-scorecard) dataset, what is the correlation between admission rate and middle ACT composite depending on school control (Public, Private Non-Profit, Private For-Profit)
+
+```{r}
+library(dplyr)
+library(purrr)
+library(data.table)
+
+# Download the data and read in 
+url <- 'https://s3.amazonaws.com/ed-college-choice-public/Most+Recent+Cohorts+(All+Data+Elements).csv'
+destfile <- 'college-scorecard.csv'
+
+if(!file.exists(destfile)) {
+    download.file(url, destfile)
+}
+
+college.scorecard <- fread(destfile, na.strings = 'NULL')
+
+# First, determine if the data is normally distributed
+
+college.scorecard %>%
+    aov(ADM_RATE ~ ACTCMMID, data = .) %>%
+    residuals() %>%
+    shapiro.test
+
+# p << 0.05, therefore, we'll use Spearman
+
+college.scorecard %>%
+    split(.$CONTROL) %>%
+    map(function(df) with(df, cor(ADM_RATE, ACTCMMID, 
+                                  use = 'complete.obs',
+                                  method = 'spearman')))
+```
+
+The first step is to create groups using `split`, then apply the function using the `map(function(df) with(df, ...))` syntax.
+

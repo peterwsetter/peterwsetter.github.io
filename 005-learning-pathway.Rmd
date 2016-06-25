@@ -25,8 +25,12 @@ Inspired by the [Open Source Data Science Master's](https://github.com/peterwset
 - [R Packages](http://r-pkgs.had.co.nz/): The next step after abstracting your code with functions.
 
 #### SQL
-Most organizations store their data in a SQL database, and most non-RMDBS systems use a version of SQL for their queries.
+Most organizations store their data in a SQL database, and most non-RMDBS systems use a version of SQL as their query language.
 
 - [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql)
 - [Mode's SQL School](https://sqlschool.modeanalytics.com/)
 - [Stanford's online course](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
+
+#### Functional Programming
+
+- [The .*apply Family](http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega)

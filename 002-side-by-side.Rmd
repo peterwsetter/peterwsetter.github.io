@@ -3,6 +3,8 @@ output:
     html_document:
         css: solarized-light.css
 ---
+[Home](https://peterwsetter.github.io)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
