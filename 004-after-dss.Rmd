@@ -1,13 +1,13 @@
 ---
 output: 
     html_document:
-        css: solarized-light.css
+      css: solarized-light.css
 ---
 [Home](https://peterwsetter.github.io)
 
 ### I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?
 
-This was the first topic on episode eight of Non-Standard Deviations. Roger Peng,  co-founder of  the Coursera series, turned to co-host Hilary Parker for her thoughts since she works outside academia. Parker offered some good advice, but her path to data science -- a PhD in Biostatistics from Johns Hopkins -- was quite different than that of the people who enroll in the Data Science Specialization.
+This was the first topic on episode eight of Non-Standard Deviations. Roger Peng,  co-founder ofÂ  the Coursera series, turned to co-host Hilary Parker for her thoughts since she works outside academia. Parker offered some good advice, but her path to data science -- a PhD in Biostatistics from Johns Hopkins -- was quite different than that of the people who enroll in the Data Science Specialization.
 
 My stereotype of DS Specializers is that they come from a background other than computer science or statistics. They're interested in data analysis and want to make a career change. I base this stereotype partially on myself: I have a technical background, but prior to making the shift to data science, I was a K-12 teacher. Here's my advice for my fellow DS Specializers on what to do next.
 
