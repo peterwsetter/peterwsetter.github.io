@@ -14,8 +14,8 @@ Inspired by the [Open Source Data Science Master's](https://github.com/peterwset
 ### Statistical Knowledge
 
 - Brian Caffo's [Biostatitics Bootcamp](https://www.youtube.com/playlist?list=PLpl-gQkQivXhk6qSyiNj51qamjAtZISJ-): More mathematical foundation to the topics in Statistical Inference
-- [Statistics in Medicine](https://lagunita.stanford.edu/courses/Medicine/MedStats./Summer2015/about): More intuitive understanding of statistics plus introduction to non-parametric tests.
-- [Designing, Running, and Analyzing Experiments](https://www.coursera.org/learn/designexperiments): Practical approach covering parametric and non-parametric tests, along with the tests for the ANOVA assumptions.
+- [Statistics in Medicine](https://lagunita.stanford.edu/courses/Medicine/MedStats./Summer2015/about): More intuitive understanding of statistics plus introduction to non-parametric tests. *After completing this class, I felt I had a much stronger understanding of concepts like p-values.*
+- [Designing, Running, and Analyzing Experiments](https://www.coursera.org/learn/designexperiments): Practical approach covering parametric and non-parametric tests, along with the tests for the ANOVA assumption.
 
 ### Programming Skills
 

@@ -27,3 +27,7 @@ output:
 #### Programming
 
 [A purrr Resource](https://peterwsetter.github.io/006-purrr.html)
+
+#### [Do-IT Solutions Ltd and eRka R Competition](http://doitprofiler.com/rkrakow/)
+
+[Cleaning and Tidying Data](https://peterwsetter.github.io/007-download-test-clean.nb.html)
