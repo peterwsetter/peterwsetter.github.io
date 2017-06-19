@@ -6,18 +6,13 @@ output:
 
 ## Peter W Setter
 
+Learner. 
+
 [Twitter](http://www.twitter.com/peterwsetter)
 
 [Github](http://www.github.com/peterwsetter)
 
 ### Posts
-
-#### Reproducible Reports
-[Individualized Reproducible Reports](https://peterwsetter.github.io/001-individualized-reports.html) Good-bye mail merge!
-
-[Side-by-Side Tables in Rmarkdown PDFs](https://peterwsetter.github.io/002-side-by-side.html)
-
-[Font Size in Rmarkdown Tables](https://peterwsetter.github.io/003-font-size.html)
 
 #### Data Science Education
 [I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?](https://peterwsetter.github.io/004-after-dss.html)
