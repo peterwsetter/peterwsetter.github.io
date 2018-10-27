@@ -44,6 +44,7 @@ Push the new branch to Github so changes are tracked and synced.
 
 ```{bash}
 git push origin BRANCHNAME:BRANCHNAME
+git push --set-upstream origin BRANCHNAME
 ```
 
 Switch back to the master

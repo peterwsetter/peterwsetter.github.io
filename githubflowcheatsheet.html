@@ -146,7 +146,8 @@ $(document).ready(function () {
 <p>Create a branch and switch to it.</p>
 <pre class="bash"><code>git checkout -b BRANCHNAME</code></pre>
 <p>Push the new branch to Github so changes are tracked and synced.</p>
-<pre class="bash"><code>git push origin BRANCHNAME:BRANCHNAME</code></pre>
+<pre class="bash"><code>git push origin BRANCHNAME:BRANCHNAME
+git push --set-upstream origin BRANCHNAME</code></pre>
 <p>Switch back to the master</p>
 <pre class="bash"><code>git checkout master</code></pre>
 <p>Work on a branch again</p>
