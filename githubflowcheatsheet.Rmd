@@ -1,0 +1,91 @@
+---
+title: "My Github Flow Commandline Cheatsheet"
+output: html_document
+---
+
+[Github Flow](https://guides.github.com/introduction/flow/) is a development workflow that works well for data science projects for small teams and individuals. On the command line, Github Flow uses `git` and their Go-based program, [`hub`](https://hub.github.com/).
+
+The steps of Github Flow are:
+
+1. Create a branch
+1. Make commits
+1. Open a pull-request
+1. Merge (when ready)
+
+`hub` installation instructions tell the user to set `git` as an alias for `hub`. `hub` will be used explicitly to show what is common `git` and what is specific to Github.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Getting Starting 
+
+Initial download of repository.
+
+```{bash}
+git clone https://github.com/USERNAME/REPONAME.git
+```
+
+With `hub`
+
+```{bash}
+hub clone USERNAME/REPONAME
+```
+
+## Create a branch
+
+Create a branch and switch to it.
+
+```{bash}
+git checkout -b BRANCHNAME
+```
+
+Push the new branch to Github so changes are tracked and synced.
+
+```{bash}
+git push origin BRANCHNAME:BRANCHNAME
+```
+
+Switch back to the master
+
+```{bash}
+git checkout master
+```
+
+Work on a branch again
+
+```{bash}
+git checkout BRANCHNAME
+```
+
+## Make commits
+
+When ready to commit a step:
+
+```{bash}
+git add FILENAME
+git commit -m 'description of change'
+git push
+```
+
+## Create a pull request
+
+Create a pull request for final review of changes.
+
+```{bash}
+hub pull-request
+```
+
+The pull-request url will be outputed to the console.
+
+At this point, review and discussion can take place on Github.
+
+## Merge
+
+After review, merge the branch onto the master.
+
+```{bash}
+hub am -3 https://github.com/USERNAME/REPONAME/pull/PULLNUM
+```
+
+The `-3` flag specifies three-way merge.

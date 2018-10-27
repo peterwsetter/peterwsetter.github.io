@@ -8,8 +8,6 @@ output:
 
 Learner. 
 
-[Twitter](http://www.twitter.com/peterwsetter)
-
 [Github](http://www.github.com/peterwsetter)
 
 ### Posts
@@ -18,3 +16,5 @@ Learner.
 [I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?](https://peterwsetter.github.io/004-after-dss.html)
 
 [Data Science with R Learning Pathway](https://peterwsetter.github.io/005-learning-pathway.html)
+
+[My Github Flow Command Line Cheat Sheet](https://peterwsetter.github.io/githubflowcheatsheet.html)
