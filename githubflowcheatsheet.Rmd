@@ -3,7 +3,7 @@ title: "My Github Flow Commandline Cheatsheet"
 output: html_document
 ---
 
-[Github Flow](https://guides.github.com/introduction/flow/) is a development workflow that works well for data science projects for small teams and individuals. On the command line, Github Flow uses `git` and their Go-based program, [`hub`](https://hub.github.com/).
+[Github Flow](https://guides.github.com/introduction/flow/) is a development workflow that works well for data analysis projects as well as for small teams and individuals. On the command line, Github Flow uses `git` and their Go-based program [`hub`](https://hub.github.com/) which provides wrappers around common tasks.
 
 The steps of Github Flow are:
 
@@ -90,3 +90,22 @@ hub am -3 https://github.com/USERNAME/REPONAME/pull/PULLNUM
 ```
 
 The `-3` flag specifies three-way merge.
+
+## Delete a branch
+
+[Source](https://stackoverflow.com/a/35738879)
+
+After a merge, first tag it as archived, then delete the branch.
+
+```{bash}
+git tag archive/BRANCHNAME BRANCHNAME
+git branch -d BRANCHNAME
+git checkout master
+```
+
+To recover later.
+
+```{bash}
+git checkout archive/BRANCHNAME
+git checkout -b NEWBRANCHNAME
+```
