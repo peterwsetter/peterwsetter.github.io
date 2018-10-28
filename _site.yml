@@ -4,3 +4,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+output:
+  html_document:
+    css: solarized-light.css
+output_dir: "."
