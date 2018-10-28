@@ -1,7 +1,6 @@
 ---
 output: html_document
 ---
-[Home](https://peterwsetter.github.io)
 
 ### I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?
 
