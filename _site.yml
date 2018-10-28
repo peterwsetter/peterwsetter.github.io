@@ -1,0 +1,6 @@
+name: "peterwsetter"
+navbar:
+  title: "Peter W Setter"
+  left:
+    - text: "Home"
+      href: index.html
