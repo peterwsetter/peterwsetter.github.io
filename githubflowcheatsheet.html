@@ -125,7 +125,7 @@ $(document).ready(function () {
 </div>
 
 
-<p><a href="https://guides.github.com/introduction/flow/">Github Flow</a> is a development workflow that works well for data science projects for small teams and individuals. On the command line, Github Flow uses <code>git</code> and their Go-based program, <a href="https://hub.github.com/"><code>hub</code></a>.</p>
+<p><a href="https://guides.github.com/introduction/flow/">Github Flow</a> is a development workflow that works well for data analysis projects as well as for small teams and individuals. On the command line, Github Flow uses <code>git</code> and their Go-based program <a href="https://hub.github.com/"><code>hub</code></a> which provides wrappers around common tasks.</p>
 <p>The steps of Github Flow are:</p>
 <ol style="list-style-type: decimal">
 <li>Create a branch</li>
@@ -159,6 +159,10 @@ git push --set-upstream origin BRANCHNAME</code></pre>
 <pre class="bash"><code>git add FILENAME
 git commit -m 'description of change'
 git push</code></pre>
+<p>Get list of commits on current branch but not the master. Prints the commit id and commit messages. <a href="https://stackoverflow.com/a/24668421">Source</a></p>
+<pre class="bash"><code>git cherry -v master</code></pre>
+<p>If you make major changes in one commit and want to go back to a previous commit, the easiest approach is creating a new branch from that old commit. <a href="https://stackoverflow.com/a/4114122">Source</a></p>
+<pre class="bash"><code>git checkout -b COMMITID</code></pre>
 </div>
 <div id="create-a-pull-request" class="section level2">
 <h2>Create a pull request</h2>
@@ -172,6 +176,17 @@ git push</code></pre>
 <p>After review, merge the branch onto the master.</p>
 <pre class="bash"><code>hub am -3 https://github.com/USERNAME/REPONAME/pull/PULLNUM</code></pre>
 <p>The <code>-3</code> flag specifies three-way merge.</p>
+</div>
+<div id="delete-a-branch" class="section level2">
+<h2>Delete a branch</h2>
+<p><a href="https://stackoverflow.com/a/35738879">Source</a></p>
+<p>After a merge, first tag it as archived, then delete the branch.</p>
+<pre class="bash"><code>git tag archive/BRANCHNAME BRANCHNAME
+git branch -d BRANCHNAME
+git checkout master</code></pre>
+<p>To recover later.</p>
+<pre class="bash"><code>git checkout archive/BRANCHNAME
+git checkout -b NEWBRANCHNAME</code></pre>
 </div>
 
 

@@ -69,7 +69,7 @@ git commit -m 'description of change'
 git push
 ```
 
-Get list of commits on current branch but not the master. [Source](https://stackoverflow.com/a/24668421)
+Get list of commits on current branch but not the master. Prints the commit id and commit messages. [Source](https://stackoverflow.com/a/24668421)
 
 ```{bash}
 git cherry -v master
@@ -78,7 +78,7 @@ git cherry -v master
 If you make major changes in one commit and want to go back to a previous commit, the easiest approach is creating a new branch from that old commit. [Source](https://stackoverflow.com/a/4114122)
 
 ```{bash}
-git check -b COMMITID
+git checkout -b COMMITID
 ```
 
 ## Create a pull request
