@@ -1,9 +1,6 @@
 ---
-output: 
-    html_document:
-        css: solarized-light.css
+output: html_document
 ---
-[Home](https://peterwsetter.github.io)
 
 ## Data Science with R Learning Pathway
 

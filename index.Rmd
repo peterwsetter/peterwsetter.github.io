@@ -1,7 +1,5 @@
 ---
-output: 
-    html_document:
-        css: solarized-light.css
+output: html_document
 ---
 
 ## Peter W Setter
@@ -9,6 +7,8 @@ output:
 Learner. 
 
 [Github](http://www.github.com/peterwsetter)
+
+[Linkedin](https://www.linkedin.com/in/peterwsetter)
 
 ### Posts
 
