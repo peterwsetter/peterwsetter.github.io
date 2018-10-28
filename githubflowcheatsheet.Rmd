@@ -69,6 +69,18 @@ git commit -m 'description of change'
 git push
 ```
 
+Get list of commits on current branch but not the master. [Source](https://stackoverflow.com/a/24668421)
+
+```{bash}
+git cherry -v master
+```
+
+If you make major changes in one commit and want to go back to a previous commit, the easiest approach is creating a new branch from that old commit. [Source](https://stackoverflow.com/a/4114122)
+
+```{bash}
+git check -b COMMITID
+```
+
 ## Create a pull request
 
 Create a pull request for final review of changes.
@@ -92,7 +104,6 @@ hub am -3 https://github.com/USERNAME/REPONAME/pull/PULLNUM
 The `-3` flag specifies three-way merge.
 
 ## Delete a branch
-
 [Source](https://stackoverflow.com/a/35738879)
 
 After a merge, first tag it as archived, then delete the branch.
