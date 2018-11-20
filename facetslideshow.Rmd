@@ -1,20 +1,27 @@
 ---
-title: 'Too Many Facets?: A Tidy Pipeline to slickR Slideshow'
+title: 'Too Many Facets?: A Tidy Pipeline to a slickR Slideshow'
 output: html_document
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-Build off the canonical gapminder example from the [tidyr 0.4.0 release blog post](https://blog.rstudio.com/2016/02/02/tidyr-0-4-0/) and the [slickR](https://metrumresearchgroup.github.io/slickR) examples.
+It's almost banal to say that facets in ggplot2 are an immensely useful tool. `facet_wrap` and `facet_grid` changed how I approach analysis and visualization, but I occasionally run into the issue of having too many facets.
+
+- There may be so many subgroups in the data that not even playing with `fig.height` can fit everything in.
+- Each graph is relatively detailed and faceting distorts how they look.
+- When exploring, I want to view each variable or subgroup on its own.
+
+When working on a recent project where I wanted to display a separate graph for each US state, I personally discovered [slickR](https://github.com/metrumresearchgroup/slickR), an R interface to the [slick](http://kenwheeler.github.io/slick/) JavaScript carousel library. Combining this with the tidyverse tool chain, it was (relatively) straightforward to go from  data to a slideshow.
+
+The code below builds off the canonical gapminder example from the [tidyr 0.4.0 release blog post](https://blog.rstudio.com/2016/02/02/tidyr-0-4-0/) and the [slickR](https://metrumresearchgroup.github.io/slickR) examples to create a slideshow with a separate graph for each country in the data set.
 
 ```{r}
 # Data
 library(gapminder)
 
-# Tidy tool chain
+# Tidy toolchain
 library(dplyr)
 library(tidyr)
 library(purrr)
@@ -27,9 +34,15 @@ library(svglite)
 library(slickR)
 ```
 
+As a reminder, gapminder includes the life expectancy, GDP per capita, and population of countries over the last half-century.
+
 ```{r}
 gapminder
 ```
+
+In this example, I will graph the life expectancy over time for each country. The first section of code follows the classic `group_by() %>% nest() %>% mutate(map())` approach. The second section updates the slickR example to use purrr. 
+
+While it's possible to pipe directly into `slickR`, I prefer saving the vector of graphs. This allows for adjusting the settings on slickR (when working interactively) or saving the object for use elsewhere. (The graphs are created in a script and used in a dashboard or report.)
 
 ```{r country_graphs}
 gapminder %>% 
@@ -51,20 +64,14 @@ gapminder %>%
   # Convert to character vector
   map_chr(function(sv) paste0('data:image/svg+xml;utf8,', as.character(sv))) ->
   country_graphs
+
 ```
 
 ```{r}
-slickR(country_graphs)
+slickR(country_graphs, slickOpts = list(dots = FALSE))
 ```
 
-
-To make it somewhat easier to view, we can use the `slickOpts` parameter to set the number of graphs per slide.
-
-```{r}
-slickR(country_graphs,
-       slickOpts = list(slidesToShow = 4, slidesToScroll = 4)
-       )
-```
+By default, `slickR` displays one graph per slide and includes a dot for each. There are a number of other options within `slickOpts`, including the number of objects to include in each slide.
 
 ```{r}
 sessionInfo()
