@@ -31,7 +31,7 @@ library(slickR)
 gapminder
 ```
 
-```{r}
+```{r country_graphs}
 gapminder %>% 
   # Use the group_by %>% nest pattern to group data by country
   group_by(continent, country) %>% 
@@ -41,12 +41,29 @@ gapminder %>%
                        ~ggplot(data = .x, aes(year, lifeExp)) +
                          geom_point() +
                          geom_line() +
-                         title(as.character(.y))
+                         labs(title = .y)
                        )
          ) %>% 
   pull(graphs) %>% 
   map(function(gr) svglite::xmlSVG(show(gr), standalone = TRUE)) %>% 
   map_chr(function(sv) paste0('data:image/svg+xml;utf8,', as.character(sv))) ->
   country_graphs
+```
+
+```{r}
+slickR(country_graphs)
+```
+
+
+To make it somewhat easier to view, we can use the `slickOpts` parameter to set the number of graphs per slide.
+
+```{r}
+slickR(country_graphs,
+       slickOpts = list(slidesToShow = 4, slidesToScroll = 4)
+       )
+```
+
+```{r}
+sessionInfo()
 ```
 
