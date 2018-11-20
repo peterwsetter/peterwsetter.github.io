@@ -1,0 +1,52 @@
+---
+title: 'Too Many Facets?: A Tidy Pipeline to slickR Slideshow'
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+Build off the canonical gapminder example from the [tidyr 0.4.0 release blog post](https://blog.rstudio.com/2016/02/02/tidyr-0-4-0/) and the [slickR](https://metrumresearchgroup.github.io/slickR) examples.
+
+```{r}
+# Data
+library(gapminder)
+
+# Tidy tool chain
+library(dplyr)
+library(tidyr)
+library(purrr)
+
+# Visualize
+library(ggplot2)
+
+# For the slideshow 
+library(svglite)
+library(slickR)
+```
+
+```{r}
+gapminder
+```
+
+```{r}
+gapminder %>% 
+  # Use the group_by %>% nest pattern to group data by country
+  group_by(continent, country) %>% 
+  nest() %>% 
+  # 
+  mutate(graphs = map2(data, country,
+                       ~ggplot(data = .x, aes(year, lifeExp)) +
+                         geom_point() +
+                         geom_line() +
+                         title(as.character(.y))
+                       )
+         ) %>% 
+  pull(graphs) %>% 
+  map(function(gr) svglite::xmlSVG(show(gr), standalone = TRUE)) %>% 
+  map_chr(function(sv) paste0('data:image/svg+xml;utf8,', as.character(sv))) ->
+  country_graphs
+```
+
