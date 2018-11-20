@@ -36,7 +36,7 @@ gapminder %>%
   # Use the group_by %>% nest pattern to group data by country
   group_by(continent, country) %>% 
   nest() %>% 
-  # 
+  # Use map2 so the country name can be used as the title
   mutate(graphs = map2(data, country,
                        ~ggplot(data = .x, aes(year, lifeExp)) +
                          geom_point() +
@@ -44,8 +44,11 @@ gapminder %>%
                          labs(title = .y)
                        )
          ) %>% 
+  # pull is the pipe-able equivalent of .[['graphs']]
   pull(graphs) %>% 
+  # Return the svg of graphs
   map(function(gr) svglite::xmlSVG(show(gr), standalone = TRUE)) %>% 
+  # Convert to character vector
   map_chr(function(sv) paste0('data:image/svg+xml;utf8,', as.character(sv))) ->
   country_graphs
 ```
