@@ -4,8 +4,6 @@ output: html_document
 
 ## Data Science with R Learning Pathway
 
-Last updated `r Sys.Date()`
-
 Inspired by the [Open Source Data Science Master's](https://github.com/peterwsetter/peterwsetter.github.io) and [Hadley Wickham's advice on becoming a data scientist](https://gist.github.com/hadley/820f09ded347c62c2864), this resource provides a pathway for learning Data Science with R. The foundation is the [Johns Hopkins Data Science Specialization](https://www.coursera.org/specializations/jhu-data-science), supplemented with [what someone should do next](https://peterwsetter.github.io/003-after-dss.html).
 
 ### Statistical Knowledge
