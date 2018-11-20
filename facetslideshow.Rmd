@@ -44,7 +44,7 @@ In this example, I will graph the life expectancy over time for each country. Th
 
 While it's possible to pipe directly into `slickR`, I prefer saving the vector of graphs. This allows for adjusting the settings on slickR (when working interactively) or saving the object for use elsewhere. (The graphs are created in a script and used in a dashboard or report.)
 
-```{r country_graphs}
+```{r country_graphs, cache = TRUE}
 gapminder %>% 
   # Use the group_by %>% nest pattern to group data by country
   group_by(continent, country) %>% 
