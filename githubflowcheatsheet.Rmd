@@ -1,18 +1,18 @@
 ---
-title: "My Github Flow Command Line Cheatsheet"
+title: "My GitHub Flow Command Line Cheatsheet"
 output: html_document
 ---
 
-[Github Flow](https://guides.github.com/introduction/flow/) is a development workflow that works well for data analysis projects as well as for small teams and individuals. On the command line, Github Flow uses `git` and their Go-based program [`hub`](https://hub.github.com/) which provides wrappers around common tasks.
+[GitHub Flow](https://guides.github.com/introduction/flow/) is a development workflow that works well for data analysis projects as well as for small teams and individuals. On the command line, GitHub Flow uses `git` and their Go-based program [`hub`](https://hub.github.com/) which provides wrappers around common tasks.
 
-The steps of Github Flow are:
+The steps of GitHub Flow are:
 
 1. Create a branch
 1. Make commits
 1. Open a pull-request
 1. Merge (when ready)
 
-`hub` installation instructions tell the user to set `git` as an alias for `hub`. `hub` will be used explicitly to show what is common `git` and what is specific to Github.
+`hub` installation instructions tell the user to set `git` as an alias for `hub`. `hub` will be used explicitly to show what is common `git` and what is specific to GitHub.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
@@ -44,7 +44,6 @@ Push the new branch to Github so changes are tracked and synced.
 
 ```{bash}
 git push origin BRANCHNAME:BRANCHNAME
-git push --set-upstream origin BRANCHNAME
 ```
 
 Switch back to the master
@@ -66,6 +65,17 @@ When ready to commit a step:
 ```{bash}
 git add FILENAME
 git commit -m 'description of change'
+```
+
+First time pushing a new branch to GitHub.
+
+```{bash}
+git push --set-upstream origin BRANCHNAME
+```
+
+Subsequent pushing a commit to GitHub.
+
+```{bash}
 git push
 ```
 
@@ -91,7 +101,7 @@ hub pull-request
 
 The pull-request url will be outputed to the console.
 
-At this point, review and discussion can take place on Github.
+At this point, review and discussion can take place on GitHub.
 
 ## Merge
 
