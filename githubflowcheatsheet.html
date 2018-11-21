@@ -11,7 +11,7 @@
 
 
 
-<title>My Github Flow Command Line Cheatsheet</title>
+<title>My GitHub Flow Command Line Cheatsheet</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -196,20 +196,20 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">My Github Flow Command Line Cheatsheet</h1>
+<h1 class="title toc-ignore">My GitHub Flow Command Line Cheatsheet</h1>
 
 </div>
 
 
-<p><a href="https://guides.github.com/introduction/flow/">Github Flow</a> is a development workflow that works well for data analysis projects as well as for small teams and individuals. On the command line, Github Flow uses <code>git</code> and their Go-based program <a href="https://hub.github.com/"><code>hub</code></a> which provides wrappers around common tasks.</p>
-<p>The steps of Github Flow are:</p>
+<p><a href="https://guides.github.com/introduction/flow/">GitHub Flow</a> is a development workflow that works well for data analysis projects as well as for small teams and individuals. On the command line, GitHub Flow uses <code>git</code> and their Go-based program <a href="https://hub.github.com/"><code>hub</code></a> which provides wrappers around common tasks.</p>
+<p>The steps of GitHub Flow are:</p>
 <ol style="list-style-type: decimal">
 <li>Create a branch</li>
 <li>Make commits</li>
 <li>Open a pull-request</li>
 <li>Merge (when ready)</li>
 </ol>
-<p><code>hub</code> installation instructions tell the user to set <code>git</code> as an alias for <code>hub</code>. <code>hub</code> will be used explicitly to show what is common <code>git</code> and what is specific to Github.</p>
+<p><code>hub</code> installation instructions tell the user to set <code>git</code> as an alias for <code>hub</code>. <code>hub</code> will be used explicitly to show what is common <code>git</code> and what is specific to GitHub.</p>
 <div id="getting-starting" class="section level2">
 <h2>Getting Starting</h2>
 <p>Initial download of repository.</p>
@@ -222,8 +222,7 @@ $(document).ready(function () {
 <p>Create a branch and switch to it.</p>
 <pre class="bash"><code>git checkout -b BRANCHNAME</code></pre>
 <p>Push the new branch to Github so changes are tracked and synced.</p>
-<pre class="bash"><code>git push origin BRANCHNAME:BRANCHNAME
-git push --set-upstream origin BRANCHNAME</code></pre>
+<pre class="bash"><code>git push origin BRANCHNAME:BRANCHNAME</code></pre>
 <p>Switch back to the master</p>
 <pre class="bash"><code>git checkout master</code></pre>
 <p>Work on a branch again</p>
@@ -233,8 +232,11 @@ git push --set-upstream origin BRANCHNAME</code></pre>
 <h2>Make commits</h2>
 <p>When ready to commit a step:</p>
 <pre class="bash"><code>git add FILENAME
-git commit -m &#39;description of change&#39;
-git push</code></pre>
+git commit -m &#39;description of change&#39;</code></pre>
+<p>First time pushing a new branch to GitHub.</p>
+<pre class="bash"><code>git push --set-upstream origin BRANCHNAME</code></pre>
+<p>Subsequent pushing a commit to GitHub.</p>
+<pre class="bash"><code>git push</code></pre>
 <p>Get list of commits on current branch but not the master. Prints the commit id and commit messages. <a href="https://stackoverflow.com/a/24668421">Source</a></p>
 <pre class="bash"><code>git cherry -v master</code></pre>
 <p>If you make major changes in one commit and want to go back to a previous commit, the easiest approach is creating a new branch from that old commit. <a href="https://stackoverflow.com/a/4114122">Source</a></p>
@@ -245,7 +247,7 @@ git push</code></pre>
 <p>Create a pull request for final review of changes.</p>
 <pre class="bash"><code>hub pull-request</code></pre>
 <p>The pull-request url will be outputed to the console.</p>
-<p>At this point, review and discussion can take place on Github.</p>
+<p>At this point, review and discussion can take place on GitHub.</p>
 </div>
 <div id="merge" class="section level2">
 <h2>Merge</h2>
