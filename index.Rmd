@@ -10,22 +10,16 @@ Learner.
 
 [Linkedin](https://www.linkedin.com/in/peterwsetter)
 
-### Projects
 
-[Democrats Won the House with 2016-like Vote Totals](https://peterwsetter.github.io/votechange/democrats-won-house-2018-by-matching-2016.html)
-
-- [Video Verison](https://youtu.be/qz7QGIoU9Lw)
-
-### Posts
-
-#### Tools and Work Flows
+#### Posts
 
 [Too Many Facets?: A Tidy Pipeline to a slickR Slideshow](facetslideshow.html)
 
-[My GitHub Flow Command Line Cheat Sheet](githubflowcheatsheet.html)
-
-#### Data Science Education
 [I Finished the Johns Hopkins Coursera Data Science Specialization, What Should I Do Now?](004-after-dss.html)
 
 [Data Science with R Learning Pathway](005-learning-pathway.html)
+
+### Projects
+
+[Democrats Won the House with 2016-like Vote Totals](https://peterwsetter.github.io/votechange/democrats-won-house-2018-by-matching-2016.html)
 
