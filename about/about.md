@@ -1,9 +1,10 @@
 ---
 title: About
-summary: About Peter W Setter Dot Com
+description: About Peter W Setter Dot Com
 date: March 19, 2022
-apply: styles
-        header
+styles: ../styles/styles.css
+card: summary
+site: @peterwsetter
 ---
 
 Peter W Setter Dot Com is the (becoming less) embarassing website of Peter Wallace Setter. The site focuses on my work as a data doer with the occasional post on my hobbies and interests. 
