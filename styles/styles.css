@@ -1,0 +1,66 @@
+:root {
+  --base3-bg: #fdf6e3;
+  --base00-primary: #657b83;
+  --base1-secondary: #93a1a1;
+  --base2-bg-hl: #eee8d5;
+  --base01-emphasized: #586e75;
+  --orange: #cb4b16;
+  --red: #dc322f;
+  --magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+  --neutral-white: ;
+}
+
+html {
+  background-color: var(--base2-bg-hl);
+  color: var(--base00-primary);
+  margin: 1em;
+}
+body {
+  background-color: var(--base3-bg);
+  margin: 0 auto;
+  max-width: 23cm;
+  border: 1pt solid var(--base1-secondary);
+  padding: 1em;
+}
+code {
+  background-color: var(--base2-bg-hl);
+  padding: 2px;
+}
+a {
+  color: var(--red);
+}
+a:visited {
+  color: var(--magenta);
+}
+a:hover,
+a:focus {
+  color: var(--cyan);
+}
+h1 {
+  color: var(--magenta);
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--blue);
+}
+pre {
+  background-color: var(--base3-bg);
+  color: var(--base1-secondary);
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
+}
+pre code {
+  background-color: #fdf6e3;
+}
+
+body[class="landing"] h1 {
+  align-self: center;
+}
