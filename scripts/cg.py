@@ -12,23 +12,21 @@ import markdown # https://python-markdown.github.io/
 input_path: str = sys.argv[1]
 output_path: str = sys.argv[2]
 
-# Helper functions
-def add_custom_meta_tag(soup: BeautifulSoup, md: markdown.core.Markdown, tag_attr: str, tag_site:str, tag_type:str):
-    # Source: https://stackoverflow.com/questions/23102400/add-meta-tag-using-beautifulsoup/23102547#23102547
-    custom_tag = soup.new_tag('meta')
-    custom_tag.attrs[tag_attr] = tag_site + ':' + tag_type
-    custom_tag.attrs['content'] = md.Meta[tag_type][0]
-    soup.head.append(custom_tag)
-    return soup
-    
 
+def add_custom_meta_tag(self: BeautifulSoup, tag_attr: str, tag_site: str, tag_type: str, tag_content: str):
+    custom_tag = self.new_tag('meta')
+    custom_tag.attrs[tag_attr] = tag_site + ':' + tag_type
+    custom_tag.attrs['content'] = tag_content
+    self.head.append(custom_tag)
+
+BeautifulSoup.add_custom_meta_tag = add_custom_meta_tag
 
 # Read in markdown and convert to html
 with open(input_path, 'r') as input_file:
-    text:str = input_file.read()
+    text: str = input_file.read()
 
 md: markdown.core.Markdown = markdown.Markdown(extensions = ['meta'])
-html:str = md.convert(text)
+html: str = md.convert(text)
 
 # Wrap
 webpage: str = '<!DOCTYPE html><html><head></head><body>' + html + '</body></html>'
@@ -48,14 +46,14 @@ title.string = md.Meta['title'][0]
 soup.head.append(title)
 
 # OG (Facebook)
-soup = add_custom_meta_tag(soup, md, 'property', 'og', 'title')
-soup = add_custom_meta_tag(soup, md, 'property', 'og', 'description')
+soup.add_custom_meta_tag('property', 'og', 'title', md.Meta['title'][0])
+soup.add_custom_meta_tag('property', 'og', 'description', md.Meta['description'][0])
 
 # Twitter
-soup = add_custom_meta_tag(soup, md, 'name', 'twitter', 'card')
-soup = add_custom_meta_tag(soup, md, 'name', 'twitter', 'site')
-soup = add_custom_meta_tag(soup, md, 'name', 'twitter', 'title')
-soup = add_custom_meta_tag(soup, md, 'name', 'twitter', 'description')
+soup.add_custom_meta_tag('name', 'twitter', 'card', md.Meta['card'][0])
+soup.add_custom_meta_tag('name', 'twitter', 'site', md.Meta['site'][0])
+soup.add_custom_meta_tag('name', 'twitter', 'title', md.Meta['title'][0])
+soup.add_custom_meta_tag('name', 'twitter', 'description', md.Meta['description'][0])
 
 
 # Write out
