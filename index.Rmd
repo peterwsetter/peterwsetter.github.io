@@ -1,0 +1,23 @@
+---
+title: "Peter W Setter"
+image: "img/peterwsetter_profile.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/peterwsetter/"
+  - label: Twitter
+    url: "https://twitter.com/peterwsetter"
+output:
+  postcards::solana
+---
+ 
+## Bio
+
+Learner. From raw data to production data product. 
+
+
+## Experience
+
+**Venture Connect** | Developer/Project Manager | March 2019 - Present
+
+**KIPP Colorado Schools** | Data and Assessment | July 2015 - January 2019
+
